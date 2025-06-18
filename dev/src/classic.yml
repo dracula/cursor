@@ -935,14 +935,6 @@ tokenColors:
 # =============================================================================
 
   - scope:
-    - emphasis
-    settings:
-      fontStyle: italic
-  - scope:
-    - strong
-    settings:
-      fontStyle: bold
-  - scope:
     - header
     settings:
       foreground: *Purple
@@ -974,12 +966,10 @@ tokenColors:
     - invalid
     settings:
       foreground: *Red
-      fontStyle: underline italic
   - scope:
     - invalid.deprecated
     settings:
       foreground: *Foreground
-      fontStyle: underline italic
   - scope:
     - entity.name.filename
     settings:
@@ -992,24 +982,16 @@ tokenColors:
   # Markdown / RST / Prose
   # ======================
 
-  - name: Underlined markup
-    scope:
-    - markup.underline
-    settings:
-      fontStyle: underline
-
   - name: Bold markup
     scope:
     - markup.bold
     settings:
-      fontStyle: bold
       foreground: *Orange
 
   - name: Markup headings
     scope:
     - markup.heading
     settings:
-      fontStyle: bold
       foreground: *Purple
 
   - name: Markup italic
@@ -1017,14 +999,12 @@ tokenColors:
     - markup.italic
     settings:
       foreground: *Yellow
-      fontStyle: italic
 
   - name: Markup strikethrough
     scope:
     - markup.strikethrough
     settings:
       foreground: *Comment
-      fontStyle: strikethrough
 
   - name: Bullets, lists (prose)
     scope:
@@ -1063,7 +1043,6 @@ tokenColors:
     - markup.quote
     settings:
       foreground: *Yellow
-      fontStyle: italic
 
   - name: Horizontal rule (prose)
     scope:
@@ -1116,7 +1095,6 @@ tokenColors:
     - entity.name.class
     settings:
       foreground: *Cyan
-      fontStyle: normal
 
   - name: this, super, self, etc.
     scope:
@@ -1128,13 +1106,11 @@ tokenColors:
     - variable.parameter.function.language.special                              # Special words as parameters
     settings:
       foreground: *Purple
-      fontStyle: italic
 
   - name: Inherited classes
     scope:
     - entity.other.inherited-class
     settings:
-      fontStyle: italic
       foreground: *Cyan
 
 # =============================================================================
@@ -1163,7 +1139,6 @@ tokenColors:
     - comment.block.documentation entity.name.type
     settings:
       foreground: *Cyan
-      fontStyle: italic
 
   - name: JSDoc-style type brackets
     scope:
@@ -1176,7 +1151,6 @@ tokenColors:
     - comment.block.documentation variable
     settings:
       foreground: *Orange
-      fontStyle: italic
 
 # =============================================================================
 # Constants
@@ -1218,7 +1192,6 @@ tokenColors:
     - entity.other.attribute-name
     settings:
       foreground: *Green
-      fontStyle: italic
 
 # =============================================================================
 # Functions/Methods
@@ -1247,7 +1220,6 @@ tokenColors:
     - meta.selectionset.graphql meta.arguments.graphql variable.arguments.graphql
     - variable.parameter
     settings:
-      fontStyle: italic
       foreground: *Orange
 
   - name: Decorators
@@ -1256,7 +1228,6 @@ tokenColors:
     - meta.decorator variable.other.property
     settings:
       foreground: *Green
-      fontStyle: italic
 
   - name: Decorator Objects
     scope:
@@ -1275,13 +1246,6 @@ tokenColors:
     settings:
       foreground: *Pink
 
-  - name: Keyword "new"
-    scope:
-    - keyword.control.new
-    - keyword.operator.new
-    settings:
-      fontStyle: bold
-
   - name: Generic selectors (CSS/SCSS/Less/Stylus)
     scope:
     - meta.selector
@@ -1296,7 +1260,6 @@ tokenColors:
     scope:
     - support
     settings:
-      fontStyle: italic
       foreground: *Cyan
 
   - name: Built-in magic functions and constants
@@ -1305,15 +1268,7 @@ tokenColors:
     - support.variable
     - variable.other.predefined
     settings:
-      fontStyle: regular
       foreground: *Purple
-
-  - name: Built-in functions / properties
-    scope:
-    - support.function
-    - support.type.property-name
-    settings:
-      fontStyle: regular
 
 # =============================================================================
 # Punctuation
@@ -1414,7 +1369,6 @@ tokenColors:
     scope:
     - variable.other.alias.yaml
     settings:
-      fontStyle: italic underline
       foreground: *Green
 
 # =============================================================================
@@ -1428,7 +1382,6 @@ tokenColors:
     - meta.interface-or-protocol storage.type.objc
     - source.groovy storage.type.def
     settings:
-      fontStyle: regular
       foreground: *Pink
 
   - name: Types
@@ -1455,7 +1408,6 @@ tokenColors:
     - storage.type.php
     - variable.annotation
     settings:
-      fontStyle: italic
       foreground: *Cyan
 
   - name: Generics, templates, and mapped type declarations
@@ -1572,7 +1524,6 @@ tokenColors:
     - meta.object-binding-pattern-variable variable.object.property             # Object destructuring property
     - meta.variable.assignment.destructured.object.coffee variable              # Object destructuring property (coffeescript)
     settings:
-      fontStyle: italic
       foreground: *Orange
 
   - name: Destructuring / aliasing variable name (RHS)
@@ -1581,7 +1532,6 @@ tokenColors:
     - meta.export variable.other.readwrite.alias                                # Module import aliasing (alias name)
     - meta.variable.assignment.destructured.object.coffee variable variable     # Object destructuring variable (coffeescript)
     settings:
-      fontStyle: normal
       foreground: *Foreground
 
 # =============================================================================
@@ -1779,7 +1729,6 @@ tokenColors:
     scope:
     - support.constant
     settings:
-      fontStyle: normal
       foreground: *Purple
 
   - name: Makefile prerequisite names
