@@ -1,6 +1,6 @@
 {
   "name": "dracula-theme",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "Dracula Theme",
   "homepage": "https://draculatheme.com",
   "description": "A dark & light theme for many editors, shells, and more.",
@@ -45,8 +45,8 @@
     ]
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
-    "js-yaml": "3.13.1",
+    "@biomejs/biome": "^2.3.6",
+    "js-yaml": "4.1.1",
     "vsce": "^2.15.0"
   }
 }

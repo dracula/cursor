@@ -1,4 +1,6 @@
 const https = require("node:https");
+const fs = require("node:fs");
+const path = require("node:path");
 const generate = require("./generate");
 
 const THEME_COLOR_REFERENCE_URL =
@@ -45,17 +47,25 @@ async function scrapeThemeAvailableKeys() {
 
 (async () => {
   const availableKeys = await scrapeThemeAvailableKeys();
-  const { base } = await generate();
+  const srcDir = path.join(__dirname, "..", "src");
+  const files = await fs.promises.readdir(srcDir);
+  const ymlFiles = files.filter((file) => file.endsWith(".yml"));
 
-  for (const key of Object.keys(base.colors)) {
-    if (!availableKeys.includes(key)) {
-      console.warn(`Unsupported key "${key}", probably deprecated?`);
+  for (const file of ymlFiles) {
+    const themeName = path.basename(file, ".yml");
+    console.log(`\n🔍 Linting theme: ${themeName}`);
+    const { base } = await generate(themeName);
+
+    for (const key of Object.keys(base.colors)) {
+      if (!availableKeys.includes(key)) {
+        console.warn(`Unsupported key "${key}", probably deprecated?`);
+      }
     }
-  }
 
-  for (const key of availableKeys) {
-    if (!Object.keys(base.colors).includes(key)) {
-      console.warn(`Missing key "${key}" in theme`);
+    for (const key of availableKeys) {
+      if (!Object.keys(base.colors).includes(key)) {
+        console.warn(`Missing key "${key}" in theme`);
+      }
     }
   }
 })().catch(console.error);
